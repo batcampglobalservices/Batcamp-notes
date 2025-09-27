@@ -153,8 +153,6 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
-
-    CORS_ALLOW_ALL_ORIGINS = True
     
     # Commented out SSL settings to avoid issues during initial deployment
     # SECURE_SSL_REDIRECT = True
