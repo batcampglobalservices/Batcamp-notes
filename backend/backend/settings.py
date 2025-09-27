@@ -33,7 +33,7 @@ if DEBUG:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 else:
     # Add your Render domain
-    ALLOWED_HOSTS = ['.onrender.com']
+    ALLOWED_HOSTS = ["*"]
 
 # Add Render.com external hostname
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -158,7 +158,7 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOWED_ORIGINS = [
-        "https://your-frontend-url.vercel.app",  # Update with your actual frontend URL
+        "https://bat-notes.vercel.app/",  # Update with your actual frontend URL
         "http://localhost:3000",
         "http://127.0.0.1:3000",
     ]
