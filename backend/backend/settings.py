@@ -154,20 +154,8 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
-else:
-    CORS_ALLOWED_ORIGINS = [
-        "https://bat-notes.vercel.app",  # Update with your actual frontend URL
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ]
-
-# Security settings - only for production
-if not DEBUG:
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    X_FRAME_OPTIONS = 'DENY'
+    CORS_ALLOWED_ORIGINS = ["*"]
     
     # Commented out SSL settings to avoid issues during initial deployment
     # SECURE_SSL_REDIRECT = True
