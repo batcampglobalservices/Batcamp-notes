@@ -1,0 +1,21 @@
+databases:
+  - name: batnotes
+    databaseName: batnotes
+    user: batnotes
+
+services:
+  - type: web
+    name: batnotes-backend
+    runtime: python3
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn backend.wsgi:application"
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: batnotes
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
